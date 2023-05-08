@@ -10,10 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className=" w-full h-full">
-      <body className={inter.className + "grid w-full h-full"}>
-        <h1>Global Layout</h1>
-        {children}
-      </body>
+      <body className={inter.className + "grid w-full h-full"}>{children}</body>
     </html>
   );
 }

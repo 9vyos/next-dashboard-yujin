@@ -5,7 +5,7 @@ export default function RootLayout({
 }) {
   return (
     <main className=" place-self-center">
-      <h1>Sub Layout</h1>
+      <h1>Sub Layout - single page</h1>
       {children}
     </main>
   );

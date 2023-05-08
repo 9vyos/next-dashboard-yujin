@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { gql } from "@apollo/client";
-import { query } from "@/lib/apollo-client";
+import { ApolloProvider, gql } from "@apollo/client";
+import { apolloClient, query } from "@/lib/graphql/apollo-client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +27,8 @@ export default async function Home() {
   console.log(films);
 
   return (
-    <main>
+    // <ApolloProvider client={apolloClient}>
+    <>
       <h1 className="text-4xl">Star Wars Films</h1>
       <ul>
         {films.map(
@@ -39,7 +40,10 @@ export default async function Home() {
             producers: string[];
             releaseDate: string;
           }) => (
-            <li key={film.episodeID} className=" bg-slate-500 rounded p-2 mb-2">
+            <li
+              key={film.episodeID}
+              className=" bg-slate-500 rounded p-2 mb-2 max-w-sm"
+            >
               <h2 className="text-2xl">{film.title}</h2>
               <p>{film.openingCrawl}</p>
               <p>Director: {film.director}</p>
@@ -49,6 +53,7 @@ export default async function Home() {
           )
         )}
       </ul>
-    </main>
+    </>
+    // </ApolloProvider>
   );
 }
