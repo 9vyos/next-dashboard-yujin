@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default async function Login() {
+export default async function SignUp() {
   return (
     <main>
-      <h1 className="text-4xl mb-8">Login</h1>
+      <h1 className="text-4xl mb-8">Sign Up</h1>
       <div>
         <form className="flex flex-col">
           <label htmlFor="email" className="font-light">
